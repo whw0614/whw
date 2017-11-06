@@ -16,19 +16,19 @@
 </head>
 <body>
 	<script>
-		var ws = window.sessionStorage['my_websocket_key'];
-		if(ws == undefined) {
-			ws = window.sessionStorage['my_websocket_key'] = new WebSocket("ws://127.0.0.1:8000");
-		} else {
-			console.log(ws);
-			// console.log(window.localStorage);
-			console.log(window.sessionStorage);
-		}
+		//var ws = window.sessionStorage['my_websocket_key'];
+		var	ws = new WebSocket("ws://127.0.0.1:8000");
+		// if(ws == undefined) {
+		// } else {
+			// console.log(ws);
+			// // console.log(window.localStorage);
+			// console.log(window.sessionStorage);
+		// }
 		ws.onopen = function(ev) {
 			console.log('onopen');
 			console.log(ws.readyState);
 			// ws.send(JSON.stringify("hello"));
-			ws.send( '{"msg":"hello","to":"whw2"}' );
+			// ws.send( '{"msg":"hello","to":"whw2"}' );
 		}
 		ws.onmessage = function(ev) {
 			console.log('onmessage');
